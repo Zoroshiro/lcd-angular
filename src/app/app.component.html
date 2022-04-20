@@ -1,0 +1,48 @@
+<!-- Part 1 -->
+<h2>Partie 1</h2>
+<form [formGroup]="form">
+  <label for="lcdText">Saisie du nombre: </label>
+  <input id="lcdText"
+         type="text"
+         formControlName="lcdText"/>
+
+  <br/>
+
+
+  <div class="digits-container">
+    <ng-container *ngFor="let lcdChar of displayLcdTextPart1">
+      <span style="padding: 10px">{{ lcdChar }}</span>
+    </ng-container>
+  </div>
+
+  <span *ngIf="form.controls['lcdText'].invalid">{{ displayLcdError }}</span>
+</form>
+
+<!-- Part 2 -->
+
+<h2>Partie 2</h2>
+<form [formGroup]="formPart2"
+     class="form-part-2">
+  <div class="form-part-2--number">
+    <label for="lcdTextPart2">Saisie du nombre: </label>
+    <input id="lcdTextPart2"
+           type="text"
+           formControlName="lcdTextPart2"/>
+  </div>
+
+  <div class="form-part-2--height">
+    <label for="height">Hauteur: </label>
+    <input id="height"
+           type="text"
+           formControlName="height"/>
+  </div>
+
+  <div class="form-part-2--width">
+    <label for="width">Largeur: </label>
+    <input id="width"
+           type="text"
+           formControlName="width"/>
+  </div>
+
+  <span *ngIf="formPart2.controls['lcdTextPart2'].invalid">{{ displayLcdError }}</span>
+</form>

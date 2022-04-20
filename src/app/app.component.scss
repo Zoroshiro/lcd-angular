@@ -1,0 +1,30 @@
+.digits-container {
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  white-space: break-spaces;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin-top: 10px
+}
+
+.form-part-2 {
+  display: flex;
+  justify-content: space-around;
+
+  .form-part-2--number {
+    display: flex;
+  }
+
+  .form-part-2--height {
+    display: flex;
+  }
+
+  .form-part-2--width {
+    display: flex;
+  }
+
+  input {
+    margin-left: 5px;
+  }
+}
