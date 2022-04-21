@@ -10,8 +10,7 @@ import { lcdNumber } from "./utils/lcd-number";
   styleUrls: [ './app.component.scss' ]
 })
 export class AppComponent extends abstractSubscribeHandler implements OnInit {
-
-  public formControlWithNumberValidator = new FormControl('', Validators.pattern('^[0-9]*$'));
+  public numberValidator = Validators.pattern('^[0-9]*$');
   public lcdsChar = [ lcdNumber.ZERO, lcdNumber.ONE, lcdNumber.TWO, lcdNumber.THREE, lcdNumber.FOUR, lcdNumber.FIVE, lcdNumber.SIX, lcdNumber.SEVEN, lcdNumber.EIGHT, lcdNumber.NINE ];
 
   public displayLcdError = 'La saisie n\'est pas valide';
@@ -19,15 +18,15 @@ export class AppComponent extends abstractSubscribeHandler implements OnInit {
   /** Part 1 **/
   public displayLcdTextPart1: string[] = [];
   public form: FormGroup = new FormGroup({
-    lcdText: this.formControlWithNumberValidator
+    lcdText: new FormControl('', this.numberValidator)
   });
 
   /** Part 2 **/
   public displayLcdTextPart2: string[] = [];
   public formPart2: FormGroup = new FormGroup({
-    lcdTextPart2: this.formControlWithNumberValidator,
-    height: this.formControlWithNumberValidator,
-    width: this.formControlWithNumberValidator
+    lcdTextPart2: new FormControl('', this.numberValidator),
+    height: new FormControl('', this.numberValidator),
+    width: new FormControl('', this.numberValidator)
   });
 
   public ngOnInit(): void {
